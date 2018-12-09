@@ -1,0 +1,16 @@
+{
+  "name": "union-closed-sets-study",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "markserv -p 8080 index.md"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gfms": "0.0.12",
+    "markserv": "^1.15.0"
+  }
+}
