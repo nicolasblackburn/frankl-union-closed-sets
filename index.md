@@ -17,7 +17,7 @@ Let $G \leq F$ denote a union-closed family $G$ subset of a union-closed family 
 
 Define $F_{x} := \{F_i \in F : x \in F_i\}$ and $F_{\bar x} := \{F_i \in F : x \notin F_i\}$.
 
-Let $\text{Sub}_ {F, x, n} := \{G \leq F : |G_{\in, x}| = n\}$ denote the set of all sub-families $G$ of $F$ where the number of sets in $G$ that contains $x$ is equal to $n$.
+Let $\text{Sub}_ {F, x, n} := \{G \leq F : |G_x| = n\}$ denote the set of all sub-families $G$ of $F$ where the number of sets in $G$ that contains $x$ is equal to $n$.
 
 ##### Theorem
 
@@ -39,13 +39,13 @@ Now suppose on the contrary that $[n + 1] \in G$.
 
 If $G = 2^{[n + 1]}$ then $|G_1| / |G| = 1/2$ and the union-closed hypothesis is true. 
 
-If on the contrary, $G \neq 2^{[n + 1]}$, we can consider without loss of generality that $|G_1| \geq |G_x|$, for all $1 < x \leq n + 1$. Consider the family of sub-families $\{ \mathbb{G}_ 0, \mathbb{G}_ 1, \ldots, \mathbb{G}_ {2^n - 1} \}$ where $\mathbb{G}_ i := \{G \in \text{Sub}_ {2^{[n + 1]}, 1, 2^n - i} : \forall x \in [2, n + 1], |G_1| \geq |G_x| \text{ and } [n + 1] \in G \}$. 
+If on the contrary, $G \neq 2^{[n + 1]}$, we can consider without loss of generality that $|G_1| \geq |G_x|$, for all $x$ such that $1 < x \leq n + 1$. Consider the family of sub-families $\{ \mathbb{G}_ 0, \mathbb{G}_ 1, \ldots, \mathbb{G}_ {2^n - 1} \}$ where $\mathbb{G}_ i := \{G \in \text{Sub}_ {2^{[n + 1]}, 1, 2^n - i} : \forall x \text{ such that } 1 < x \leq n + 1, |G_1| \geq |G_x| \text{ and } [n + 1] \in G \}$. 
 
 For all $G$ in $\mathbb{G}_ 0$ we can see that $|G_1| = 2^n$ and $|G_{\bar 1}| \leq 2^n$. Therefore $|G_1| / |G| \geq 1 / 2$.
 
 We will make a second induction by supposing the union-closed hypothesis to be true for all $\mathbb{G}_i$ such that $0 \leq i < 2^n - 1$. 
 
-We remark that we can obtain any family $G'$ in $\mathbb{G}_ {i + 1}$ by taking a family $G$ in $\mathbb{G}_ i$ and removing a set from $G$ which contains $1$. However, for $|G'_1| \geq |G'_x|$ to hold for all $1 < x \leq n + 1$, we must also remove a set from $G$ which contains $2$; a set which contains $3$; and so on up to a set which contains $n+1$.
+We remark that we can obtain any family $G'$ in $\mathbb{G}_ {i + 1}$ by taking a family $G$ in $\mathbb{G}_ i$ and removing a set from $G$ which contains $1$. However, for $|G'_1| \geq |G'_x|$ to hold for all x such that $1 < x \leq n + 1$, we must also remove a set from $G$ which contains $2$; a set which contains $3$; and so on up to a set which contains $n+1$.
 
 Again if $[n + 1] \notin G'$, we can conclude by the first induction hypothesis that the union-closed hypothesis is true for $G'$. 
 
