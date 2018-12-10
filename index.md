@@ -43,7 +43,7 @@ If on the contrary, $G \neq 2^{[n + 1]}$, we can consider without loss of genera
 
 For all $G$ in $\mathbb{G}_ 0$ we can see that $|G_1| = 2^n$ and $|G_{\bar 1}| \leq 2^n$. Therefore $|G_1| / |G| \geq 1 / 2$.
 
-We will make a second induction by supposing the union-closed hypothesis to be true for all $\mathbb{G}_i$ such that $0 \leq i < 2^n - 1$. 
+We will make a second induction by supposing the union-closed hypothesis to be true for all $G \in \mathbb{G}_i$ such that $0 \leq i < 2^n - 1$. 
 
 We remark that we can obtain any family $G'$ in $\mathbb{G}_ {i + 1}$ by taking a family $G$ in $\mathbb{G}_ i$ and removing a set from $G$ which contains $1$. However, for $|G'_1| \geq |G'_x|$ to hold for all x such that $1 < x \leq n + 1$, we must also remove a set from $G$ which contains $2$; a set which contains $3$; and so on up to a set which contains $n+1$.
 
