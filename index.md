@@ -1,5 +1,11 @@
 # The Union-Closed Sets Conjecture
 
+By Nicolas Blackburn
+
+##### Introduction
+
+The union-closed conjecture is a well known unsolved problem in combinatorial mathematics. In this article, we will give a short proof by induction.
+
 ##### Notations
 Let $2^X$ denote the power set of $X$.
 
@@ -25,19 +31,24 @@ We will proceed by induction. It is easy to verify that it is true for any sub-f
 
 Now suppose the union-closed hypothesis is true for all sub-families $F \leq 2^{[n]}$.
 
-Take a sub-family $G \leq 2^{[n + 1]}$. Either 
-$$[n + 1] \in G$$ or $$[n + 1] \notin G.$$
+Take a sub-family $G \leq 2^{[n + 1]}$. Either $[n + 1] \in G$ or $[n + 1] \notin G.$
 
 Suppose that $[n + 1] \notin G$. Then $G \leq 2^{[n]}$ and by the induction hypothesis the union-closed hypothesis is true.
 
-Now suppose on the contrary that $[n + 1] \in G$. If $G = 2^{[n + 1]}$ then $|G_1| / |G| = 1/2$. 
+Now suppose on the contrary that $[n + 1] \in G$. 
 
-Consider the family of sub-families $\{ \mathbb{G}_ 0, \mathbb{G}_ 1, \ldots, \mathbb{G}_ {2^n - 1} \}$ where $\mathbb{G}_ i := \text{Sub}_ {G, x, 2^n - i}$. For a sub-family $H$ in $\mathbb{G}_i$, we can consider without loss of generality that $|H_1| \geq |H_j|$, for all $1 < j \leq n + 1$. Therefore we will consider that $x = 1$ for all $\mathbb{G}_i$.
+If $G = 2^{[n + 1]}$ then $|G_1| / |G| = 1/2$ and the union-closed hypothesis is true. 
 
-For all $H$ in $\mathbb{G}_ 0$ we can see that $|H_1| = 2^n$ and $|H_{\bar 1}| \leq 2^n$. Therefore $|H_1| / |H| \geq 1 / 2$.
+If on the contrary, $G \neq 2^{[n + 1]}$, we can consider without loss of generality that $|G_1| \geq |G_x|$, for all $1 < x \leq n + 1$. Consider the family of sub-families $\{ \mathbb{G}_ 0, \mathbb{G}_ 1, \ldots, \mathbb{G}_ {2^n - 1} \}$ where $\mathbb{G}_ i := \{G \in \text{Sub}_ {2^{[n + 1]}, 1, 2^n - i} : \forall x \in [2, n + 1], |G_1| \geq |G_x| \text{ and } [n + 1] \in G \}$. 
 
-We will make a second induction by supposing the union-closed hypothesis to be true for all $\mathbb{G}_i$ such that $0 \leq i < n + 1$. 
+For all $G$ in $\mathbb{G}_ 0$ we can see that $|G_1| = 2^n$ and $|G_{\bar 1}| \leq 2^n$. Therefore $|G_1| / |G| \geq 1 / 2$.
 
-We remark that we can obtain a family $H'$ in $\mathbb{G}_ {i + 1}$ by taking a family $H$ in $\mathbb{G}_ i$ and removing a set from $H$ which contains $1$. However, for $|H'_1| \geq |H'_j|$ to hold for all $1 < j \leq n + 1$, we must also remove a set from $H$ which contains $2$; a set which contains $3$; and so on up to a set which contains $n+1$.
+We will make a second induction by supposing the union-closed hypothesis to be true for all $\mathbb{G}_i$ such that $0 \leq i < 2^n - 1$. 
 
-Since $[n + 1] \in G$ we have that $[n + 1] \in H'$. Therefore to obtain a set $H'$ in $\mathbb{G}_ {i + 1}$ from $H$, we must at least remove a set in $H_1$ and a set in $H_{\bar 1}$. Thus $|H'_ 1| / |H'| \geq (|H_ 1| - 1) / (|H| - 2)$ and by the second induction hypothesis $|H'_ 1| / |H'| \geq 1 / 2$. This concludes the proof. $\square$
+We remark that we can obtain any family $G'$ in $\mathbb{G}_ {i + 1}$ by taking a family $G$ in $\mathbb{G}_ i$ and removing a set from $G$ which contains $1$. However, for $|G'_1| \geq |G'_x|$ to hold for all $1 < x \leq n + 1$, we must also remove a set from $G$ which contains $2$; a set which contains $3$; and so on up to a set which contains $n+1$.
+
+Again if $[n + 1] \notin G'$, we can conclude by the first induction hypothesis that the union-closed hypothesis is true for $G'$. 
+
+Otherwise we have that $[n + 1] \in G'$. Therefore to obtain a set $G'$ in $\mathbb{G}_ {i + 1}$ from $G$, we must at least remove a set in $G_1$ and a set in $G_{\bar 1}$. Thus $|G'_ 1| / |G'| \geq (|G_ 1| - 1) / (|G| - 2)$ and by the second induction hypothesis $|G'_ 1| / |G'| \geq 1 / 2$. 
+
+We have covered all the cases and this concludes the proof. $\square$
