@@ -33,7 +33,7 @@ Now suppose the union-closed hypothesis is true for all sub-families $F \leq 2^{
 
 Take a sub-family $G \leq 2^{[n + 1]}$. Either $[n + 1] \in G$ or $[n + 1] \notin G.$
 
-Suppose that $[n + 1] \notin G$. Then $G \leq 2^{[n]}$ and by the induction hypothesis the union-closed hypothesis is true.
+Suppose that $[n + 1] \notin G$. Then $G$ is isomorphic to a sub-family $F \leq 2^{[n]}$ and by the induction hypothesis the union-closed hypothesis is true.
 
 Now suppose on the contrary that $[n + 1] \in G$. 
 
