@@ -18,7 +18,7 @@ Let $2^X$ denotes the power set of $X$.
 
 Let $[n]$ denotes $\{1, 2, \ldots, n\}$.
 
-Let $(F, \cup)$ denotes a union-closed family with $|F| > 1$. That is $\forall A, B \in F, A \cup B \in F$. When the context is clear we can simply write $F$.
+Let $(F, \cup)$ denotes a union-closed family with $F \neq \{\emptyset \}$. That is $\forall A, B \in F, A \cup B \in F$. When the context is clear we can simply write $F$.
 
 Define the universe of a family $F$ as $U(F) := \bigcup_{X \in F} X$.
 
