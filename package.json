@@ -9,8 +9,5 @@
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "gfms": "0.0.12",
-    "markserv": "^1.15.0"
-  }
+  "devDependencies": {}
 }
