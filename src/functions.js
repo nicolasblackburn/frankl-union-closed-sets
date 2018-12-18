@@ -19,7 +19,7 @@ function display(set) {
     }
 }
 
-function nChooseK(set, k) {
+function setChooseK(set, k) {
     if (isEmpty(set) || 0 === k) {
         return [[]];
     } else {
@@ -27,7 +27,7 @@ function nChooseK(set, k) {
         for (let i = 0; i < set.length - k + 1; i++) {
             const first = set[i];
             const tail = set.slice(i + 1);
-            const subResults = nChooseK(tail, k - 1);
+            const subResults = setChooseK(tail, k - 1);
             subResults.forEach(subset => {
                 family.push([first].concat(subset));
             });
@@ -39,11 +39,11 @@ function nChooseK(set, k) {
 function power(set) {
     const family = [];
     for (let i = 0; i <= set.length; i++) {
-        nChooseK(set, i).forEach(subset => {
+        setChooseK(set, i).forEach(subset => {
             family.push(subset);
         });
     }
     return family;
 }
 
-Object.assign(exports, {isAtom, isEmpty, display, range, nChooseK, power});
+Object.assign(exports, {isAtom, isEmpty, display, range, setChooseK, power});
