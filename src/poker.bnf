@@ -1,0 +1,61 @@
+<suite>     ::= "Club" | "Diamond" | "Heart" | "Spade" | <var>
+<rank>      ::= "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "J" | "Q" | "K" | "A" | <var>
+<color>     ::= "Red" | "Black"
+<card>      ::= <suite> "|" <rank>
+<var-expr>  ::= <var> | 
+<var>       ::= <lc-letter> <number>
+<nat-number>    ::= "0" | <positive-digit> <nat-number>
+<positive-digit> ::= "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+<digit> ::= "0" | <positive-digit>
+<letter>    ::= <lc-letter> | <uc-letter>
+<lc-letter> ::= "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z"
+<uc-letter> ::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z"
+
+<relative-rank> ::= <rank-var> <relative-operator> <positive-number>
+<relative-operator> ::= <add-operator> | <subtract-operator>
+<add-operator> ::= "+"
+<subtract-operator> ::= "-"
+<wildcard> ::= "*"
+<suit-var> ::= "s" <digit>
+<rank-var> ::= "r" <digit>
+<color-var> ::= "c" <digit>
+<positive-number> ::= <positive-digit> | <positive-digit> <positive-number>
+<digit> ::= "0" | <positive-digit>
+<positive-digit> ::= "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+<suit-literal> ::= "Club" | "Diamond" | "Heart" | "Spade"
+<rank-literal> ::= "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "J" | "Q" | "K" | "A"
+<color-literal> ::= "Red" | "Black"
+<set-of-rank> ::= "{" <list-of-rank-literal> "}"
+<set-of-suit> ::= "{" <list-of-set-literal> "}"
+<list-of-rank-literal> ::= <rank-literal> | <rank-literal> "," <list-of-rank-literal>
+<list-of-suit-literal> ::= <suit-literal> | <suit-literal> "," <list-of-suit-literal>
+
+
+<literal> ::= <uc-letter-or-digit> | <uc-letter-or-digit> <characters>
+<variable> ::= <letter> | <letter> <characters>
+<characters> ::= <character> | <character> <characters>
+<character> ::= <letter> | <digit> | "_"
+<uc-letter-or-digit> ::= <uc-letter> | <digit>
+<number> ::= <digit> | <digit> <number>
+<digit> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+<set> ::= "{" <comma-separated> "}"
+<comma-separated> ::= <literal-or-variable> | <literal-or-variable> "," <comma-separated>
+<literal-or-variable> ::= <literal> | <variable>
+<wildcard> ::= "*"
+<math-binary-expression> ::= <literal-or-variable> <math-operator> <literal-or-variable>
+<math-operator> ::= "+" | "-"
+<set-or-literal> ::= <set> | <literal>
+<assignment> ::= <variable> "=" <set-or-literal>
+/*
+Examples: 
+
+    ROYAL_FLUSH:     s0|10, s0|J, s0|Q, s0|K, s0|A
+    STRAIGHT_FLUSH:  s0|r0, s0|r0+1, s0|r0+2, s0|r0+3, s0|r0+4
+    FOUR_OF_A_KIND:  *|r0, *|r0, *|r0, *|r0, *|r1
+    FULL_HOUSE:      *|r0, *|r0, *|r0, *|r1, *|r1
+    FLUSH:           s0|*, s0|*, s0|*, s0|*, s0|*
+    STRAIGHT:        *|r0, *|r0+1, *|r0+2, *|r0+3, *|r0+4
+    THREE_OF_A_KIND: *|r0, *|r0, *|r0, *|r1, *|r2
+    TWO_PAIRS:       *|r0, *|r0, *|r1, *|r1, *|r2, *|r3
+    JACKS_OR_BETTER  *|r0={J,Q,K,A}, *|r0, *|r1, *|r2, *|r3
+*/

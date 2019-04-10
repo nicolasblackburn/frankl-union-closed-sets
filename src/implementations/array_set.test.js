@@ -1,4 +1,4 @@
-const {display, setChooseK, power, range} = require('./functions');
+const {display, isAtom, isEmpty, isSubset, power, range, setChooseK} = require('./array_set');
 
 test('display([]) equals "Ø"?', () => {
     expect(display([])).toEqual("Ø");
@@ -10,6 +10,26 @@ test('display([1, 2, 3]) equals "{1, 2, 3}"?', () => {
 
 test('display([[], [1], [2], [1, 2]]) equals "{Ø, {1}, {2}, {1, 2}}"?', () => {
     expect(display([[], [1], [2], [1, 2]])).toEqual("{Ø, {1}, {2}, {1, 2}}");
+});
+
+test('isAtom(1) equals true?', () => {
+    expect(isAtom(1)).toStrictEqual(true);
+});
+
+test('isAtom([]) equals false?', () => {
+    expect(isAtom([])).toStrictEqual(false);
+});
+
+test('isAtom([1]) equals false?', () => {
+    expect(isAtom([1])).toStrictEqual(false);
+});
+
+test('isEmpty([1]) equals false?', () => {
+    expect(isEmpty([1])).toStrictEqual(false);
+});
+
+test('isEmpty([]) equals true?', () => {
+    expect(isEmpty([])).toStrictEqual(true);
 });
 
 test('range(0) equals []?', () => {
@@ -50,4 +70,20 @@ test('power([]) equals [[]]?', () => {
 
 test('power([1, 2, 3]) equals [[], [1], [2], [3], [1, 2], [1, 3], [2, 3], [1, 2, 3]]?', () => {
     expect(power([1, 2, 3])).toEqual([[], [1], [2], [3], [1, 2], [1, 3], [2, 3], [1, 2, 3]]);
+});
+
+test('isSubset([], [1, 2, 3]) equals true?', () => {
+    expect(isSubset([], [1, 2, 3])).toEqual(true);
+});
+
+test('isSubset([1, 2], [1, 2, 3]) equals true?', () => {
+    expect(isSubset([1, 2], [1, 2, 3])).toEqual(true);
+});
+
+test('isSubset([1, 4], [1, 2, 3]) equals false?', () => {
+    expect(isSubset([1, 4], [1, 2, 3])).toEqual(false);
+});
+
+test('isSubset([1, 2, 3], [1, 2]) equals false?', () => {
+    expect(isSubset([1, 2, 3], [1, 2])).toEqual(false);
 });
