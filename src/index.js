@@ -154,9 +154,9 @@ const n = parseInt(process.argv[2]);
 const base = set.range(n);
 const p = set.powerRange(n);
 const visited = {};
-for (let i = 0; i < p.length - 1; i++) {
-    console.group(`F_${i}:`);
-    const subFamilies = choosek(p.length - i, p);
+for (let i = p.length; i >= 2; i--) {
+    console.group(`ℱ_${i}:`);
+    const subFamilies = choosek(i, p);
     for (const subFamily of subFamilies) {
         if (isUnionClosed(subFamily) && subFamily.includes(0) && subFamily.includes(base)) {
             const tag = ind(n, subFamily);
@@ -164,7 +164,7 @@ for (let i = 0; i < p.length - 1; i++) {
             const clazz = tag.sort((a, b) => b - a) + "";
             if (key === clazz && !visited[key]) {
                 visited[key] = true;
-                console.log(key);
+                console.log("φ: (" + key + ")");
                 console.log(familyToString(subFamily) + "\n");
             }
         }
