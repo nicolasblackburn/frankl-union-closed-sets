@@ -2,31 +2,43 @@
 
 ## Introduction
 
-In this text, we will try to formulate a proof of the union-closed sets conjecture. Because we will deal with a lot of higher-order sets, we will distinguish three types of sets: _collections_, _families_ and _sets_. We will try to reserve the term _set_ for the lowest order sets, that is sets which contains elements which cannot be broken down into further sets of elements. We will use the terms _family_ for sets containing sets of elements and _collection_ for sets of families. In the same vein we will try to reserve the term element for the members of the lowest order sets. Put succintly, collections contain families, families contain sets and sets contain elements.
+In this text, we will formulate a proof of the union-closed sets conjecture by induction. It will be convenient to have a short name to deal with union-closed sets so, in the same spirit as _posets_, we'll use the term _usets_ to denote such sets. Formally a uset `F` is a finite non-empty family of sets, different from `{⦰}`, paired with a union operation `(F, ∪)` such that `F` is closed under union. That is `∀ X, Y ∊ F.(X ∪ Y ∊ F)`.
 
-To stay consistent with our convention, we will refer as of now to the union-closed families conjecture.
+A subuset is a subset of a uset that is also closed under the union operation. To differentiate it from a normal set which might not necessarily be union-closed, we will use `F < G` to denote a subuset `F` of `G`.
 
-Just like with sets and subsets, we may also refer to subcollections and subfamilies.
+For the rest of this work, we will only be concerned with usets over integers as it is easy to translate results to usets over any universe of elements by indexing those elements with integers and introducing the isomorphic map that associates each elements with its integer index.
 
-_subcollection_:
-    Let `C` and `C'` be two collections such that every family `F` of `C` is also a family of `C'`, then `C` is a subcollection of `C'` and we use the expression `C ⊂ C'` to denote such two collections.
+## Definitions
 
-_subfamily_:
-    Let `F` and `F'` be two families such that every set `X` of `F` is also a set of `F'`, then `F` is a subfamily of `F'` and we use the expression `F ⊂ F'` to denote such two families.
+_Universe_:
+    The universe `U(F)` of a family of sets `F` is defined as `U(F) := ⋃_(X ∊ F) X`.
 
-It will also be convenient to have a short name to deal with union-closed families so, in the same spirit as _posets_, we'll use the term _usets_  to denote such families. Formally a uset is a family `F` paired with a union operation `(F, +)` such that `F` is closed under `+`. That is for all `X`, `Y` in `F`, `X` + `Y` in `F`.
+_Range_:
+    The range from `1` to `n` is defined as `[n] := {1, 2, ..., n}`.
 
-A subuset is a subfamily of a uset that is also closed under the union operation. To differentiate it from a subfamily which might not necessarily be union-closed, we will use `U ⋐ U'` to denote a subuset `U` of `U'`.
+_Coset_:
+    Let `F` be a uset with universe `U` and `X` be a subset of `U`. Then the coset of `F` by `X` is denoted `F_X` and is defined as `F_X := {A ∊ F: A ∩ X ≠ ⦰}`. When `X` is a singleton `{a}`, `F_a := F_{a}`.
 
-In this work, we will only be concerned with usets of integers as it is easy to translate results with usets of integers to any type of usets by using a straightforward isomorphic mapping.
+## Conjecture Statement
 
-Other notations that will come in handy will be:
+The union-closed sets conjecture can be formulated as for every uset `F`, there exists an element `x` in `U(F)` such that `2 |F_x| ≥ |F|`. 
 
-- `[1]` to denote the set `{1}`, `[2]` to denote the set `{1, 2}` and more generaly `[n]` to denote the set `{1, 2, ..., n}`;
-- `2^X` to denote the powerset of `X`; 
-- `F_x` for the subfamily of `F` which contains all sets `X` in `F` containing `x`;
-- `|X|` will denote the number of members of a set of any order as usual.
+## Proof
 
-Later in this text, we will want to partition collections of usets
+### 1. Base Case
 
-(F:2^)
+Let us introduce the base case. Let us consider the powerset `P(U) = {⦰, {1}, {⦰, 1}}` for `U = [1]`. By definition `P(U)` is closed under union and `2 |P(U)_1| = |P(U)|`. The only other subset of `P(U)` that is not empty and that is different from `{⦰}` is `F = {{1}}`. It is trivial show that `F` is a uset and since `|F_1| = |F|` we can derive that `2 |F_1| ≥ |F|`.
+
+### 2. Induction Hypothesis
+
+Now consider a universe `U = [n]` of size `n`. Let us suppose that every subuset `F < P(U)` satisfy `∃x ∊ U.(2 |F_x| ≥ |F|)`.
+
+### 3. Induction Step
+
+We will now turn our attention to `U = [n + 1]`, a universe of size `n + 1`, and let `C` denote the family of all subusets of `P(U)`. Let us introduce a partition of `C` into classes `C_i = {F ⊂ P(U): |F_1| = i}` for every `0 ≤ i ≤ 2^n`.
+
+### 3.3 Subusets With Empty Coset By 1 
+
+Let us consider class `C_0`, 
+
+⋃⋂∊≤≥∃∀⊂⊃∈∉∪∩≠
