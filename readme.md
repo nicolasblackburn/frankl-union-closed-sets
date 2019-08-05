@@ -52,3 +52,7 @@ We define a map $\Phi: F \to \mathop {Im} \Phi$ as $\Phi(F) = F \setminus \{n + 
 Now we can ask the question: what are the subsets $S \subset P(U)$ such that $F \sqcup S \in C_i$? The answer is precisely those that are subsets $S \subset \mathop {\mathop {Im}} \Phi$ and which preserves union-closed property under disjoint union. Let us suppose that $S$ contains a set $X$ that is not in $\mathop {Im} \Phi$. Then $X \cup (n + 1)$ is not in $F$ and therefore $F \sqcup S$ cannot be a member of $C_i$. Because $\mathop {Im} \Phi$ is in bijection with $F$, $|\mathop {Im} \Phi| = |F|$ and therefore $|S| \le i$.
 
 We can now conclude the proof. If $i > |S|$ then $2 |(F \sqcup S)_{n + 1}| \ge |F \sqcup S|$. If $i = |S|$ then $S = \mathop {Im} \Phi$ and there exist an element $x \in U(\mathop {Im} \Phi)$ such that $2 |(\mathop {Im} \Phi)_x| \ge |\mathop {Im} \Phi|$. The size of coset $|F_x| = |(\mathop {Im} \Phi)_x|$ therefore $2 |(F \sqcup \mathop {Im} \Phi)_x| \ge |F \sqcup \mathop {Im} \Phi|$.
+
+[] H. Bruhn and O. Schaudt, The Journey of the Union-Closed Sets Conjecture, _Graphs and Combinatorics_ 31(6) (2015), 2043-2074. https://www.uni-ulm.de/fileadmin/website_uni_ulm/mawi.inst.081/Henning/UCSurvey.pdf
+
+[] Wikipedia, Union-closed sets conjecture, http://en.wikipedia.org/wiki/Union-closed_sets_conjecture, accessed: 2019/08/05.
